@@ -1,11 +1,25 @@
-const InputNum1 = document.querySelector("#input1") as HTMLInputElement;
-const InputNum2 = document.querySelector("#input2") as HTMLInputElement;
-const SubmitButton = document.querySelector("button");
-
-const addNumbers = (num1: number, num2: number) => {
-  return num1 + num2;
+enum Access {
+  ADMIN = 1234,
+  MODERATOR = "admin",
+  USER = 1111,
+}
+const student: {
+  name: string;
+  age: number;
+  gender?: string;
+  interest: string[];
+  access: Access;
+} = {
+  name: "Juan",
+  age: 19,
+  interest: ["Basketball", "Reading"],
+  access: Access.MODERATOR,
 };
 
-SubmitButton?.addEventListener("click", () => {
-  console.log(`the sum is ${addNumbers(+InputNum1.value, +InputNum2.value)}`);
-});
+// if (student.access === 1234) {
+//   console.log("is admin");
+// }
+
+if (student.access === "admin") {
+  console.log("is moderator");
+}
