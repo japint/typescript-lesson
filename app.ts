@@ -1,25 +1,17 @@
-enum Access {
-  ADMIN = 1234,
-  MODERATOR = "admin",
-  USER = 1111,
-}
-const student: {
-  name: string;
-  age: number;
-  gender?: string;
-  interest: string[];
-  access: Access;
-} = {
-  name: "Juan",
-  age: 19,
-  interest: ["Basketball", "Reading"],
-  access: Access.MODERATOR,
+type CustomOrAliases = number | string;
+
+const addOrCombine = (data1: CustomOrAliases, data2: CustomOrAliases) => {
+  let result: number | string;
+  if (typeof data1 === "number" && typeof data2 === "number") {
+    result = data1 + data2;
+  } else {
+    result = data1.toString() + data2.toString();
+  }
+  return result;
 };
 
-// if (student.access === 1234) {
-//   console.log("is admin");
-// }
+const combineNumbers = addOrCombine(3, 4);
+console.log(combineNumbers);
 
-if (student.access === "admin") {
-  console.log("is moderator");
-}
+const combineString = addOrCombine("Hello", "World");
+console.log(combineString);
