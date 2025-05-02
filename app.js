@@ -1,14 +1,10 @@
-var addOrCombine = function (data1, data2) {
-    var result;
-    if (typeof data1 === "number" && typeof data2 === "number") {
-        result = data1 + data2;
-    }
-    else {
-        result = data1.toString() + data2.toString();
-    }
-    return result;
+// data type
+var InputNum1 = document.querySelector("#input1");
+var InputNum2 = document.querySelector("#input2");
+var SubmitButton = document.querySelector("button");
+var addNumbers = function (num1, num2) {
+    return num1 + num2;
 };
-var combineNumbers = addOrCombine(3, 4);
-console.log(combineNumbers);
-var combineString = addOrCombine("Hello", "World");
-console.log(combineString);
+SubmitButton === null || SubmitButton === void 0 ? void 0 : SubmitButton.addEventListener("click", function () {
+    console.log("the sum is ".concat(addNumbers(+InputNum1.value, +InputNum2.value)));
+});
