@@ -1,12 +1,7 @@
-// data type
-const InputNum1 = document.querySelector("#input1") as HTMLInputElement;
-const InputNum2 = document.querySelector("#input2") as HTMLInputElement;
-const SubmitButton = document.querySelector("button");
-
-const addNumbers = (num1: number, num2: number) => {
-  return num1 + num2;
+// object type
+const student = {
+  name: "Juan",
+  age: 19,
 };
 
-SubmitButton?.addEventListener("click", () => {
-  console.log(`the sum is ${addNumbers(+InputNum1.value, +InputNum2.value)}`);
-});
+console.log(student);

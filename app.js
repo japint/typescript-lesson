@@ -1,10 +1,6 @@
-// data type
-var InputNum1 = document.querySelector("#input1");
-var InputNum2 = document.querySelector("#input2");
-var SubmitButton = document.querySelector("button");
-var addNumbers = function (num1, num2) {
-    return num1 + num2;
+// object type
+var student = {
+    name: "Juan",
+    age: 19,
 };
-SubmitButton === null || SubmitButton === void 0 ? void 0 : SubmitButton.addEventListener("click", function () {
-    console.log("the sum is ".concat(addNumbers(+InputNum1.value, +InputNum2.value)));
-});
+console.log(student);
