@@ -1,12 +1,23 @@
 // data type
-const InputNum1 = document.querySelector("#input1") as HTMLInputElement;
-const InputNum2 = document.querySelector("#input2") as HTMLInputElement;
-const SubmitButton = document.querySelector("button");
-
-const addNumbers = (num1: number, num2: number) => {
-  return num1 + num2;
+const addFunction = (
+  num1: number,
+  num2: number,
+  showResult: boolean,
+  message: string
+) => {
+  const result = num1 + num2;
+  if (showResult) {
+    console.log(message + result);
+  } else {
+    console.log("show result is false");
+  }
 };
 
-SubmitButton?.addEventListener("click", () => {
-  console.log(`the sum is ${addNumbers(+InputNum1.value, +InputNum2.value)}`);
-});
+let number1 = 5;
+number1 = 9;
+
+const number2 = 2.4;
+const showResult = true;
+const message = "Sum is: ";
+
+addFunction(number1, number2, showResult, message);
