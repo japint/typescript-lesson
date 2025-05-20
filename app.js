@@ -1,10 +1,11 @@
-// data type
-var InputNum1 = document.querySelector("#input1");
-var InputNum2 = document.querySelector("#input2");
-var SubmitButton = document.querySelector("button");
-var addNumbers = function (num1, num2) {
+function sum(num1, num2) {
     return num1 + num2;
-};
-SubmitButton === null || SubmitButton === void 0 ? void 0 : SubmitButton.addEventListener("click", function () {
-    console.log("the sum is ".concat(addNumbers(+InputNum1.value, +InputNum2.value)));
-});
+}
+function getResult(num) {
+    var resultString = "Result : ".concat(num);
+    return resultString;
+}
+var AddOrGetResult;
+var GetResultFunction;
+AddOrGetResult = sum;
+GetResultFunction = getResult;
