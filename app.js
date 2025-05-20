@@ -1,10 +1,11 @@
 var addOrCombine = function (data1, data2) {
+    // filtering
     var result;
     if (typeof data1 === "number" && typeof data2 === "number") {
         result = data1 + data2;
     }
     else {
-        result = data1.toString() + data2.toString();
+        result = "".concat(data1.toString(), " ").concat(data2.toString());
     }
     return result;
 };
