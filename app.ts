@@ -1,14 +1,27 @@
-function sum(num1: number, num2: number) {
-  return num1 + num2;
+let userData: unknown;
+let trueData: string;
+
+userData = "now";
+userData = 5;
+
+// additional checking
+if (typeof userData === "string") {
+  trueData = userData;
 }
 
-function getResult(num: number): string {
-  let resultString = `Result : ${num}`;
-  return resultString;
+// data type never, use for utility function
+// use for error generated functions, generate logs
+
+// never
+
+function generateErrorCode(description: string, errorCode: number): never {
+  throw { message: description, code: errorCode };
 }
 
-let AddOrGetResult: (num1: number, num2: number) => number;
-let GetResultFunction: (num: number) => string;
+// another example
+function infiniteLopp(): never {
+  while (true) {}
+}
 
-AddOrGetResult = sum;
-GetResultFunction = getResult;
+generateErrorCode("Error happened", 502);
+infiniteLopp();
