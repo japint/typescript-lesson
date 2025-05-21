@@ -1,27 +1,30 @@
-let userData: unknown;
-let trueData: string;
-
-userData = "now";
-userData = 5;
-
-// additional checking
-if (typeof userData === "string") {
-  trueData = userData;
+// interface model of object
+interface ModelType {
+  type: string;
+  color: string;
+  event: () => void;
 }
 
-// data type never, use for utility function
-// use for error generated functions, generate logs
+// classes
+class Vehicle {
+  // properties
+  modelType: ModelType;
 
-// never
-
-function generateErrorCode(description: string, errorCode: number): never {
-  throw { message: description, code: errorCode };
+  // this will run every time instantiate run
+  constructor(model: ModelType) {
+    this.modelType = model;
+  }
 }
 
-// another example
-function infiniteLopp(): never {
-  while (true) {}
-}
+let model_type = {
+  type: "Car",
+  color: "Blue",
+  event: () => {
+    console.log("Event Function");
+  },
+};
 
-generateErrorCode("Error happened", 502);
-infiniteLopp();
+// instantiate
+const car = new Vehicle(model_type);
+
+console.log(car);
